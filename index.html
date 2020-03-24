@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="style.css"/>
+    <title>TTC Arrival Estimates</title>
+</head>
+<body>
+    <div class="closestStop">
+    <button class="location">Find Your Closest Stop</button>
+    <span class="locationOutput"></span>
+    </div>
+
+    <span class="break">OR</span>
+
+    <div class="ui-widget routeSelection">
+        <label for="routes">Choose a Route: </label>
+        <input id="routes" autocomplete="off">
+    </div>
+
+    <div class="ui-widget directionSelection">
+        <label for="directions">Choose a Direction: </label>
+        <input id="directions" autocomplete="off">
+    </div>
+
+    <div class="ui-widget stopSelection">
+        <label for="stops">Choose a Stop: </label>
+        <input id="stops" autocomplete="off">
+    </div>
+
+    <div class="arrivalEstimatesContainer">
+        <h3 class="arrivalEstimates"></h3>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>
