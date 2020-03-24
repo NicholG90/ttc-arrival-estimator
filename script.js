@@ -8,7 +8,7 @@ app.init = () => {
 // Calling list of all Routes & corresponding data on page load
 app.getRoutes = () => {
     $.ajax({
-        url: "http://proxy.hackeryou.com",
+        url: "https://proxy.hackeryou.com",
         method: "GET",
         dataType: "json",
         data: {
