@@ -8,13 +8,17 @@ app.init = () => {
 // Calling list of all Routes & corresponding data on page load
 app.getRoutes = () => {
     $.ajax({
-        url: "http://restbus.info/api/agencies/ttc/routes",
+        url: "http://proxy.hackeryou.com",
         method: "GET",
-        dataType: "json"
+        dataType: "json",
+        data: {
+            reqUrl: 'http://restbus.info/api/agencies/ttc/routes',
+        }
     }).then(response => {
         app.displayRoutes(response)
     })
 }
+
 
 // All routes passed to function that parses titles and uses jquery UI display
 app.displayRoutes = (routes) => {
