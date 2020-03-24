@@ -6,6 +6,7 @@ app.init = () => {
 }
 
 // Calling list of all Routes & corresponding data on page load
+// Proxied this to use on github pages and test as api is http. Will update everything to proxy as needed.
 app.getRoutes = () => {
     $.ajax({
         url: "https://proxy.hackeryou.com",
