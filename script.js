@@ -41,7 +41,6 @@ app.getDirection = () => {
         app.routeSelection = $('#routes')
             .val()
             .split("-")[0];
-        console.log(app.routeSelection)
     $.ajax({
         url: "https://proxy.hackeryou.com",
         method: "GET",
