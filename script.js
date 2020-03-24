@@ -36,7 +36,7 @@ app.displayRoutes = (routes) => {
 
 // When Route is selected, route number is parsed and then specific route information is called
 app.getDirection = () => {
-    $('#routes').on('change',() => {
+    $('#routes').on('focusout',() => {
         $('.directionSelection').show(400).css('display','flex')
         app.routeSelection = $('#routes')
             .val()
@@ -69,7 +69,7 @@ app.displayDirections = (routeDirection) => {
 });
 
 app.getStops = (routeDirection) => {
-    $('#directions').on('change',() => {
+    $('#directions').on('focusout',() => {
         $('.stopSelection').show(400).css('display','flex')
         let directionSelection = $('#directions').val()
         directionSelection = directionSelection.split(" -")[0];
@@ -92,7 +92,7 @@ app.getStops = (routeDirection) => {
 app.stopSelectionid = "";
 
 app.displayStop = (routeDirection) => {
-$('#stops').on('change',() => {
+$('#stops').on('focusout',() => {
     stopSelection = $('#stops').val();
     const fullMatchingStopData = directionStops.map(id => {
         const matchingStop = routeDirection.stops.find(stop => stop.id  === id );
