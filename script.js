@@ -43,9 +43,12 @@ app.getDirection = () => {
             .split("-")[0];
         console.log(app.routeSelection)
     $.ajax({
-        url: `http://restbus.info/api/agencies/ttc/routes/${app.routeSelection}/`,
+        url: "https://proxy.hackeryou.com",
         method: "GET",
-        dataType: "json"
+        dataType: "json",
+        data: {
+            reqUrl: `http://restbus.info/api/agencies/ttc/routes/${app.routeSelection}/`,
+        }
     }).then(response => {
         app.displayDirections(response)
         app.getStops(response)
@@ -104,9 +107,12 @@ $('#stops').on('change',() => {
 
 app.getEstimate = () => {
 $.ajax({
-    url: `http://restbus.info/api/agencies/ttc/routes/${app.routeSelection}/stops/${app.stopSelectionid}/predictions`,
+    url: "https://proxy.hackeryou.com",
     method: "GET",
-    dataType: "json"
+    dataType: "json",
+    data: {
+        reqUrl: `http://restbus.info/api/agencies/ttc/routes/${app.routeSelection}/stops/${app.stopSelectionid}/predictions`
+    }
 }).then(response => {
     clearInterval(app.timer);
     // Check if timer is running
@@ -174,9 +180,12 @@ app.displayClosestInformation = (position) => {
         let latitude = position.coords.latitude;
         let longitude = position.coords.longitude;
         $.ajax({
-            url: `http://restbus.info/api/locations/${latitude},${longitude}/predictions`,
+            url: "https://proxy.hackeryou.com",
             method: "GET",
-            dataType: "json"
+            dataType: "json",
+            data: {
+                reqUrl: `http://restbus.info/api/locations/${latitude},${longitude}/predictions`,
+            }
         }).then(function(response) {
                 $('#routes').val(`${response[0].route.title}`);
                 let trimmedDirection = response[0].values[0].direction.title;
